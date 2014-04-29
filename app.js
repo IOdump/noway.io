@@ -16,7 +16,7 @@ var kue = require('kue')
   , jobs = kue.createQueue();
 
 var app = express();
-app.set('api key', 'changeme');
+app.set('api key', '42h4ckcess');
 app.use(checkAuth);
 
 

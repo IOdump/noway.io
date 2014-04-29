@@ -43,14 +43,14 @@ mkdir -pv  $builddir || die
 cd $builddir
 
 cp -av /opt/Project-OSRM/profiles $builddir/ || die
-cp -av /opt/maps/parc-saint-maur.osm.bz2 $builddir/map.osm.bz2 || die
+cp -av /opt/maps/ref-map.osm.bz2 $builddir/map.osm.bz2 || die
 cp -av $1 $builddir/profile.lua || die
 
 $builddir/osrm-extract map.osm.bz2
 $builddir/osrm-prepare map.osrm
 
 cat <<EOF > server.ini || die
-Threads = 8
+Threads = 7
 IP = 0.0.0.0
 Port = $2
 
